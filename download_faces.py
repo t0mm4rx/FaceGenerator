@@ -11,7 +11,7 @@ if __name__ != '__main__':
 
 CODE_URL = "https://api.intra.42.fr/oauth/authorize?client_id=dded57253bdd723f2b41103a4c0e562117daff785fe27008cbebac4e4a502cec&redirect_uri=https%3A%2F%2Ftommarx.fr%2F&response_type=code"
 
-MAX_REQUEST = 200
+MAX_REQUEST = 1000
 
 def get_bearer():
     if (not os.path.exists("./bearer.txt")):
@@ -43,9 +43,9 @@ def get_bearer():
 
 def get_users():
     if (not os.path.exists("./users.json")):
-        bar = Bar('Fetching users', max=MAX_REQUEST + 400)
+        bar = Bar('Fetching users', max=MAX_REQUEST)
         result = []
-        for i in range(200, MAX_REQUEST + 400):
+        for i in range(1, MAX_REQUEST):
             api_call = requests.get('https://api.intra.42.fr/v2/campus/1/users?page={}'.format(i), headers={'Authorization': 'Bearer {}'.format(get_bearer())})
             res = api_call.text
             print(res)
