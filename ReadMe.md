@@ -37,6 +37,12 @@ We want the neural network to focus only on the student faces, not on the enviro
 
 The script download_faces.py downloads and cleans the dataset. Be patient it's really slow !
 
+## Requirements
+- Tensorflow
+- Pillow
+- Numpy
+- Progressbar
+
 ## Dev log
 
 ### Jan, 6th
@@ -48,3 +54,22 @@ I made cleanup functions to remove pictures of piscine. We only want pictures of
 I'am now ready to process this data.
 
 I'll reshape them to 64x64, and normalize pixels value between -1 and 1 to speed convergence up.
+
+## Jan, 7th
+
+Exploring a little bit the images I downloaded yesterday. One problem : I only deleted images with a height different than 175 to filter piscine pictures.
+
+But images has different width, some are 175 and other are 131.
+
+I'm thinking about cropping images to 131 pixels from the center. I'll test on different images to see if it's OK.
+
+After looking multiple pictures, I figured out that each school 42 promotion has its own photo setup.
+
+I think I will try with photos of my promotion first (late 2019), we have 769 pictures. I doubt it will be enough training example but let give it a try.
+
+I have now a clean dataset. I filtered it manually, I deleted most of unframed pictures and staff custom pictures.
+I would say the dataset is about 25% female and 75% male, but it's just an estimation.
+
+We have now a clean 760 64x64 pictures dataset !
+
+I now have a good view of the dataset, I think we are ready to make some machine learning !
