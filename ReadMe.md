@@ -22,11 +22,11 @@ Hidden 2 : 32
 Hidden 3 : 64
 Output layer : 1028
 
-Of course number of neurons in each layer, but it has to have this double funnel shape.
+Of course number of neurons in each layer can change, but it has to have this double funnel shape.
 
-We train the autoencoder to give as the ouput the inupt we provide.
+We train the autoencoder to give as the ouput the same input we provided.
 
-To sum up, the network learn to compress data by keeping data despite dimension reduction.
+To sum up, the network learn to compress data by preserving data despite dimension reduction.
 
 ## Dataset
 
@@ -35,7 +35,7 @@ The dataset will be the pictures of the 42 Paris campus.
 They have all the same size (175 pixels x 175 pixels), and more important, they have the same framing and the same background.
 We want the neural network to focus only on the student faces, not on the environment, so that's perfect.
 
-The script download_face.py downloads and cleans the dataset. Be patient it's really slow !
+The script download_faces.py downloads and cleans the dataset. Be patient it's really slow !
 
 ## Dev log
 
