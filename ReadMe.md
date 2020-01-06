@@ -82,4 +82,7 @@ All hidden layers have relu activation, output will have sigmoid. I'll train wit
 Note : I'm listening to Dark Side of the Moon, great for coding !
 
 Here what I get after training this model :
+
 ![First result !](./readme_ressources/test1.png)
+
+I wasn't expecting to have a result that fast !

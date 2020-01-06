@@ -23,7 +23,7 @@ model.add(tf.keras.layers.Dense(12288, activation='sigmoid'))
 
 # We train it
 model.compile(optimizer='adam', loss='mean_squared_error')
-model.fit(train_set, train_set, epochs=3, batch_size=32, validation_data=(test_set, test_set))
+model.fit(train_set, train_set, epochs=10, batch_size=32, validation_data=(test_set, test_set))
 #loss, acc = model.evaluate(test_set, test_set)
 #print('Test Accuracy: {}'.format(acc))
 
