@@ -2,6 +2,7 @@ import numpy as np
 import tensorflow as tf
 import dataset
 from PIL import Image
+import os
 
 if __name__ != "__main__":
     exit(0)
@@ -16,9 +17,14 @@ print("Test set : {}".format(len(test_set)))
 
 # We define out model
 model = tf.keras.Sequential()
-model.add(tf.keras.layers.Dense(512, input_shape=(12288,), activation='sigmoid'))
+model.add(tf.keras.layers.Dense(1024, input_shape=(12288,), activation='sigmoid'))
+model.add(tf.keras.layers.Dense(4048, activation='relu'))
+model.add(tf.keras.layers.Dense(1024, activation='relu'))
+model.add(tf.keras.layers.Dense(512, activation='relu'))
 model.add(tf.keras.layers.Dense(32, activation='relu'))
 model.add(tf.keras.layers.Dense(512, activation='relu'))
+model.add(tf.keras.layers.Dense(1024, activation='relu'))
+model.add(tf.keras.layers.Dense(4048, activation='relu'))
 model.add(tf.keras.layers.Dense(12288, activation='sigmoid'))
 
 # We train it
@@ -27,25 +33,21 @@ model.fit(train_set, train_set, epochs=30, batch_size=32, validation_data=(test_
 #loss, acc = model.evaluate(test_set, test_set)
 #print('Test Accuracy: {}'.format(acc))
 
-# We visualize one example
-"""
-predictions = model.predict(np.array(test_set[0:10]))
-for i in range(10):
-    img = predictions[i]
-    img = img * 255
-    img = img.reshape((64, 64, 3))
-    img = img.astype(np.uint8)
+# We visualize examples
 
-    pil_img = Image.fromarray(img)
-    pil_img.save("./results/test{}.png".format(i))
-"""
-image = Image.open("./dataset1/tmarx.jpg")
-image = np.array(image).reshape((12288,))
-image = image / 255
-prediction = model.predict(np.array([image]))[0]
-prediction = prediction * 255
-prediction = prediction.reshape((64, 64, 3))
-prediction = prediction.astype(np.uint8)
+def encode_decode(folder, file):
+    os.system("mkdir -p ./results/{}".format(folder))
+    image = Image.open("./dataset1/{}".format(file))
+    image = np.array(image).reshape((12288,))
+    image = image / 255
+    prediction = model.predict(np.array([image]))[0]
+    prediction = prediction * 255
+    prediction = prediction.reshape((64, 64, 3))
+    prediction = prediction.astype(np.uint8)
 
-pil_img = Image.fromarray(prediction)
-pil_img.save("./results/test_tmarx.png")
+    pil_img = Image.fromarray(prediction)
+    pil_img.save("./results/{}/test_{}.png".format(folder, file))
+
+logins = ["vgoldman", "tmarx", "dyoann", "dzementz", "anloubie", "vparekh", "mashar"]
+for login in logins:
+    encode_decode("model2", "{}.jpg".format(login))

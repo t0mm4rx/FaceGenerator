@@ -55,6 +55,8 @@ I'am now ready to process this data.
 
 I'll reshape them to 64x64, and normalize pixels value between -1 and 1 to speed convergence up.
 
+Too sleepy to continue 😴, doing more interesting stuff tomorrow.
+
 ## Jan, 7th
 
 Exploring a little bit the images I downloaded yesterday. One problem : I only deleted images with a height different than 175 to filter piscine pictures.
@@ -79,7 +81,7 @@ First try, I will train a regular neural network, with 12288 --> 512 --> 32 --> 
 
 All hidden layers have relu activation, output will have sigmoid. I'll train with Adam and mse error function.
 
-Note : I'm listening to Dark Side of the Moon, great for coding !
+Note : 🎵 I'm listening to Dark Side of the Moon, great for coding ! 🎵
 
 Here what I get after training this model :
 
@@ -102,3 +104,30 @@ To see more easily how well the network is doing, here is my picture, and the pi
 
 ![Me](./readme_ressources/first_model/tmarx.jpg)
 ![Me by the network](./readme_ressources/first_model/test_tmarx.png)
+
+Ok, maybe not so recognizable 😅
+
+So what can we do now to make the neural network more precise ?
+
+We can increase the size of the first hidden layer. I think it will make faces more sharps, but faces are still encoded in a 32 dimensions vector, so it won't help with face-likelyness. I'll try increasing a little bit the network, more power could be fun.
+
+So I will try this structure :
+12288 --> 2000 --> 32 --> 2000 --> 12288
+
+Generated pictures are still blur and far from reality, so I don't post result here.
+
+Now I will try a deeper network :
+12288 --> 1024 --> 512 --> 32 --> 512 --> 1024 --> 12288
+
+Praying that the learning won't be too long.
+
+It took like five minutes, the result is better but not still as good as I want. Next try :
+12288 --> 4048 --> 1024 --> 512 --> 32 --> 512 --> 1024 --> 4048 --> 12288
+
+It starts to gte bigger, I hope it will converge fast enough.
+
+The model trained in a couple of minutes. The result is better, but we still need more power. Here is my face, with the first model and the deeper one now :
+
+![Me](./readme_ressources/first_model/tmarx.jpg)
+![Me by the first model](./readme_ressources/first_model/test_tmarx.png)
+![Me by the second model](./readme_ressources/second_model/tmarx.jpg)
