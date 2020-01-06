@@ -41,11 +41,11 @@ for i in range(10):
 """
 image = Image.open("./dataset1/tmarx.jpg")
 image = np.array(image).reshape((12288,))
-image = temp / 255
+image = image / 255
 prediction = model.predict(np.array([image]))[0]
 prediction = prediction * 255
 prediction = prediction.reshape((64, 64, 3))
 prediction = prediction.astype(np.uint8)
 
 pil_img = Image.fromarray(prediction)
-pil_img.save("./results/test_tmarx.png".format(i))
+pil_img.save("./results/test_tmarx.png")

@@ -99,3 +99,6 @@ I wasn't expecting to have a result that fast !
 The faces aren't clearly defined, but maybe we can recognize some of the students :)
 
 To see more easily how well the network is doing, here is my picture, and the picture created by the network :
+
+![Me](./readme_ressources/first_model/tmarx.png)
+![Me by the network](./readme_ressources/first_model/test_tmarx.png)
