@@ -133,4 +133,7 @@ The model trained in a couple of minutes. The result is better, but we still nee
 ![Me by the second model](./readme_ressources/second_model/test_tmarx.png)
 
 As you can see, the generated picture is sharper, shadows are stronger and background is more defined.
-Good improvement. I'd like to train wider network and also later try with CNN layers.
+Good improvement. I'd like to train wider network and also later try with CNN layers. Maybe we can also decrease the compression, maybe from 32 to 512. We don't have much data, so I'm a bit scared that the model will quickly overfit.
+
+Trying now :
+12288 --> 10000 --> 5000 --> 1000 --> 100 --> 1000 --> 5000 --> 10000 --> 12288
