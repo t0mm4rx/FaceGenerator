@@ -83,6 +83,15 @@ Note : I'm listening to Dark Side of the Moon, great for coding !
 
 Here what I get after training this model :
 
-![First result !](./readme_ressources/test1.png)
+![First result !](./readme_ressources/first_model_test1.png)
+![First result !](./readme_ressources/first_model_test2.png)
+![First result !](./readme_ressources/first_model_test3.png)
+![First result !](./readme_ressources/first_model_test4.png)
+![First result !](./readme_ressources/first_model_test5.png)
+![First result !](./readme_ressources/first_model_test6.png)
+![First result !](./readme_ressources/first_model_test7.png)
+![First result !](./readme_ressources/first_model_test8.png)
+![First result !](./readme_ressources/first_model_test9.png)
+![First result !](./readme_ressources/first_model_test10.png)
 
 I wasn't expecting to have a result that fast !
