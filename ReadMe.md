@@ -130,7 +130,7 @@ The model trained in a couple of minutes. The result is better, but we still nee
 
 ![Me](./readme_ressources/first_model/tmarx.jpg)
 ![Me by the first model](./readme_ressources/first_model/test_tmarx.png)
-![Me by the second model](./readme_ressources/second_model/test_tmarx.jpg)
+![Me by the second model](./readme_ressources/second_model/test_tmarx.png)
 
 As you can see, the generated picture is sharper, shadows are stronger and background is more defined.
 Good improvement. I'd like to train wider network and also later try with CNN layers.
