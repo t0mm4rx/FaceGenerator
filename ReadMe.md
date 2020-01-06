@@ -70,6 +70,16 @@ I think I will try with photos of my promotion first (late 2019), we have 769 pi
 I have now a clean dataset. I filtered it manually, I deleted most of unframed pictures and staff custom pictures.
 I would say the dataset is about 25% female and 75% male, but it's just an estimation.
 
-We have now a clean 760 64x64 pictures dataset !
+We have now a clean 757 64x64 pictures dataset !
 
 I now have a good view of the dataset, I think we are ready to make some machine learning !
+
+
+First try, I will train a regular neural network, with 12288 --> 512 --> 32 --> 512 --> 12288
+
+All hidden layers have relu activation, output will have sigmoid. I'll train with Adam and mse error function.
+
+Note : I'm listening to Dark Side of the Moon, great for coding !
+
+Here what I get after training this model :
+![First result !](./readme_ressources/test1.png)

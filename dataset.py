@@ -4,8 +4,9 @@ import os
 
 def get_dataset():
     res = []
-    for file in os.listdir("./images/"):
-        image = Image.open("./images/{}".format(file))
-        print(image.size)
-        image.show()
-        exit(0)
+    for file in os.listdir("./dataset1/"):
+        image = Image.open("./dataset1/{}".format(file))
+        temp = np.array(image).reshape((12288,))
+        temp = temp / 255
+        res.append(temp)
+    return res
