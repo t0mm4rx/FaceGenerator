@@ -92,8 +92,10 @@ Here what I get after training this model :
 ![First result !](./readme_ressources/first_model/test7.png)
 ![First result !](./readme_ressources/first_model/test8.png)
 ![First result !](./readme_ressources/first_model/test9.png)
-![First result !](./readme_ressources/first_model/test10.png)
+![First result !](./readme_ressources/first_model/test0.png)
 
 I wasn't expecting to have a result that fast !
 
 The faces aren't clearly defined, but maybe we can recognize some of the students :)
+
+To see more easily how well the network is doing, here is my picture, and the picture created by the network :
