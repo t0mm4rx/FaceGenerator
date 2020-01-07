@@ -45,7 +45,9 @@ The script download_faces.py downloads and cleans the dataset. Be patient it's r
 
 ## Dev log
 
-### Jan, 6th
+Before starting this project, I wanted to keep a trace of my progress and my methods. So I decided to write every steps of the process in a dev log. Also it might be interesting for other people. I will write a clean blog post later if the project shows great results.
+
+### Jan, 5th
 
 Today I finished to collect data. I have now a full dataset of 3620 175x175 pictures of students (120M).
 
@@ -57,7 +59,7 @@ I'll reshape them to 64x64, and normalize pixels value between -1 and 1 to speed
 
 Too sleepy to continue 😴, doing more interesting stuff tomorrow.
 
-## Jan, 7th
+## Jan, 6th
 
 Exploring a little bit the images I downloaded yesterday. One problem : I only deleted images with a height different than 175 to filter piscine pictures.
 
@@ -137,3 +139,11 @@ Good improvement. I'd like to train wider network and also later try with CNN la
 
 Trying now :
 12288 --> 10000 --> 5000 --> 1000 --> 100 --> 1000 --> 5000 --> 10000 --> 12288
+
+## Jan, 7th
+
+I trained the last network while I was sleeping, but the network is too heavy for my RAM (8GB :( ). The script just stopped running 😐
+
+I start thinking about using AWS, I never never tried before it could be a great opportunity to try. I contacted people in my school that knows well machine learning, they adviced me to try Google Colab which is free. I'll start when I'll be at home. I looked on the AWS website, there is a 12-months trial period for their deep learning servers. Might give it a try.
+
+I'll also try to implement CNN layers, it may improve results a lot.
