@@ -78,7 +78,6 @@ We have now a clean 757 64x64 pictures dataset !
 
 I now have a good view of the dataset, I think we are ready to make some machine learning !
 
-
 First try, I will train a regular neural network, with 12288 --> 512 --> 32 --> 512 --> 12288
 
 All hidden layers have relu activation, output will have sigmoid. I'll train with Adam and mse error function.
@@ -108,6 +107,8 @@ To see more easily how well the network is doing, here is my picture, and the pi
 ![Me by the network](./readme_ressources/first_model/test_tmarx.png)
 
 Ok, maybe not so recognizable 😅
+
+Oh, and I changed the normalization of pixels from -1 --> 1 to 0 --> 1, to make the network converge with sigmoid activation.
 
 So what can we do now to make the neural network more precise ?
 
