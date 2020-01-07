@@ -17,19 +17,18 @@ print("Test set : {}".format(len(test_set)))
 
 # We define out model
 model = tf.keras.Sequential()
-model.add(tf.keras.layers.Dense(1024, input_shape=(12288,), activation='sigmoid'))
-model.add(tf.keras.layers.Dense(10000, activation='relu'))
-model.add(tf.keras.layers.Dense(5000, activation='relu'))
-model.add(tf.keras.layers.Dense(1000, activation='relu'))
-model.add(tf.keras.layers.Dense(100, activation='relu'))
-model.add(tf.keras.layers.Dense(1000, activation='relu'))
-model.add(tf.keras.layers.Dense(5000, activation='relu'))
-model.add(tf.keras.layers.Dense(10000, activation='relu'))
+model.add(tf.keras.layers.Dense(4048, input_shape=(12288,), activation='sigmoid'))
+model.add(tf.keras.layers.Dense(1024, activation='relu'))
+model.add(tf.keras.layers.Dense(512, activation='relu'))
+model.add(tf.keras.layers.Dense(64, activation='relu'))
+model.add(tf.keras.layers.Dense(512, activation='relu'))
+model.add(tf.keras.layers.Dense(1024, activation='relu'))
+model.add(tf.keras.layers.Dense(4048, activation='relu'))
 model.add(tf.keras.layers.Dense(12288, activation='sigmoid'))
 
 # We train it
 model.compile(optimizer='adam', loss='mean_squared_error')
-model.fit(train_set, train_set, epochs=20, batch_size=32, validation_data=(test_set, test_set))
+model.fit(train_set, train_set, epochs=25, batch_size=32, validation_data=(test_set, test_set))
 #loss, acc = model.evaluate(test_set, test_set)
 #print('Test Accuracy: {}'.format(acc))
 
@@ -50,4 +49,4 @@ def encode_decode(folder, file):
 
 logins = ["vgoldman", "tmarx", "dyoann", "dzementz", "anloubie", "vparekh", "mashar"]
 for login in logins:
-    encode_decode("model2", "{}.jpg".format(login))
+    encode_decode("model3", "{}.jpg".format(login))
